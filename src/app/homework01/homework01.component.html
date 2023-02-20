@@ -1,0 +1,18 @@
+<!-- <p>homework01 works!</p> -->
+<div class="header">
+    <h1 class="header-text">Angular list of prohibited words</h1>
+</div>
+  <div class="conteiner">
+    <div class="conteiner-content" [attr.style]="color">
+      <h3 class="conteiner-content-badWords"><span>Bad words:</span><span class="red">{{stringWords}}</span></h3>
+      <div class="conteiner-content-InpBtns">
+        <input type="text" class="conteiner-content-InpBtns-inp" [class.errRed] = 'errRed' [(ngModel)]="word">
+        <button class="conteiner-content-InpBtns-add" (click)="addWords()">Add</button>
+        <button class="conteiner-content-InpBtns-reset" (click)="resetAll()">Reset</button>
+      </div>
+      <p class="massage">{{massage}}</p>
+      <textarea name="conteiner-content-area" class="conteiner-content-area" [(ngModel)]="texareaInput"  [class.errRedText] = 'errRedText'>{{texareaInput}}</textarea>
+      <p class="massage2">{{massage2}}</p>
+      <button type="button" class="conteiner-content-cenzor" (click)="checkText()">Cenzor</button>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header {
+    width: 100%;
+    min-height: 100px;
+    background-color: lightgray;
+    padding: 10px;
+    &-text {
+      font-size: 30px;
+      text-align: center;
+      line-height: 70px;
+    }
+  }
+  .conteiner {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-content {
+      width: 600px;
+      min-height: 200px;
+      transition-duration: 4s;
+      background-color:rgba(211, 211, 211, 0.445);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 7px;
+  
+      &-badWords {
+        font-size: 25px;
+        & span{
+          margin-right: 15px;
+        }
+      }
+      &-InpBtns {
+        display: flex;
+        gap: 10px;
+        &-inp {
+          width: 70%;
+          min-height: 30px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 0 2px gray;
+          padding: 5px 10px;
+          font-size: 16px;
+          &:focus {
+            outline: none;
+          }
+        }
+  
+        &-add,
+        &-reset {
+          min-width: 75px;
+          padding: 5px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 17px;
+        }
+        &-add {
+          background-color: rgb(255, 217, 0);
+          &:hover{
+              background-color: rgb(255, 238, 0);
+              box-shadow: 0 0 7px rgb(255, 238, 0);
+          }
+        }
+        &-reset {
+          background-color: red;
+          color: white;
+          &:hover{
+              background-color: rgb(255, 47, 0);
+              box-shadow: 0 0 4px rgb(255, 47, 0);
+          }
+        }
+      }
+      &-area {
+        width: 100%;
+        min-height: 200px;
+        resize: none;
+        border: none;
+        border-radius: 7px;
+        box-shadow: 0 0 2px gray;
+        padding: 10px;
+        font-size: 18px;
+        font-family: "Times New Roman", Times, serif;
+        &:focus {
+          outline: none;
+        }
+      }
+      &-cenzor {
+        width: 100%;
+        min-height: 40px;
+        color: white;
+        border: none;
+        background-color: green;
+        box-shadow: 0 0 2px gray;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        &:hover{
+          background-color: rgb(0, 128, 60);
+          box-shadow: 0 0 4px rgb(0, 128, 60);
+      }
+      }
+    }
+  }
+  .red, .massage, .massage2 {
+    color: red;
+  }
+  .errRed, .errRedText{
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+  }
