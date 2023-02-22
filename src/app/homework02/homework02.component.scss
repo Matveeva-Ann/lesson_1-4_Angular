@@ -1,0 +1,125 @@
+header {
+  width: 100%;
+  min-height: 70px;
+  background-color: #d3d3d3;
+  font-size: 30px;
+  text-align: center;
+  line-height: 70px;
+  box-shadow: 0 0 5px gray;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  min-height: 60vh;
+}
+.formBox {
+  width: 40%;
+  height: 300px;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.entered {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 20px;
+}
+.entered-input,
+.butnAdd, .butnE {
+  min-height: 30px;
+  padding: 5px;
+  border: none;
+  color: gray;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 0 3px gray;
+  &:focus {
+    outline: none;
+  }
+}
+.red{
+  box-shadow: 0 0 6px red;
+}
+.butnAdd, .butnE{
+  cursor: pointer;
+  background-color: #2e8b57;
+  color: white;
+  box-shadow: 0 0 2px #2e8b57;
+  min-height: 40px;
+  &:hover {
+    background-color: #18693b;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+.butnE{
+  background-color: #20B2AA;
+  &:hover{
+    background-color: #17958f;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+.tableBox {
+  width: 50%;
+  min-height: 300px;
+  padding: 20px;
+}
+.table {
+  border-top: 1px solid rgb(199, 199, 199);
+  border-collapse: collapse;
+    &-tr {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      font-weight: 700;
+      border-bottom: 1px solid rgb(199, 199, 199);
+      
+    }
+}
+thead{
+  border-bottom: 1px solid rgb(199, 199, 199);
+  border-top: 1px solid rgb(199, 199, 199);
+}
+
+.table-tbody-tr{
+  font-size: 17px;
+}
+
+th, td{
+  padding: 5px;
+  text-align: center;
+}
+
+.massage{
+  color: red;
+  font-size: 15px;
+  margin: -10px 0;
+}
+.btn-edit, .btn-delete{
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  &:active{
+    transform: translateY(1px);
+  }
+}
+.btn-delete{
+  background-color: red;
+}
+.btn-edit{
+  background-color: rgb(255, 208, 0);
+}

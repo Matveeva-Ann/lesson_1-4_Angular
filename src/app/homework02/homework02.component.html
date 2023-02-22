@@ -1,0 +1,108 @@
+<header>Angular users task</header>
+<main>
+	<div class="formBox">
+		<form action="" class="form" name="form">
+			<div class="enteredValue entered">
+				<label for="enteredLogin">Login</label>
+				<input type="text" id="enteredLogin" name="login" placeholder="Enter login" class="entered-input" [class.red]="!isRegLogin" [(ngModel)]="formLog">
+			</div>
+			<div class="enteredValue entered">
+				<label for="enteredPassword">Password</label>
+				<input type="text" id="enteredPassword" name="password" placeholder="Enter password"  class="entered-input" [class.red]="!isRegPass" [(ngModel)]="formPass">
+			</div>
+			<div class="enteredValue entered">
+				<label for="enteredEmail">Email address</label>
+				<input type="text" id="enteredEmail" name="email" placeholder="Enter email" class="entered-input" [class.red]="!isRegEmail" [(ngModel)]="formEmail">
+			</div>
+			<p class="massage" *ngIf="!isRegLogin || !isRegPass || !isRegEmail"> * Перевірте правильність заповнення форми</p>
+			<button type="submit" *ngIf="!editStatus" class="butnAdd" (click)="takingDataForm()">Add user</button>
+			<button type="submit" *ngIf="editStatus" class="butnE" (click)="updateName()">Edit user</button>
+		</form>
+	</div>
+	<div class="tableBox">
+		<table style="width: 100%;" class="table">
+			<thead>
+				<tr class="table-tr t-head">
+					<th>#</th>
+					<th>Login</th>
+					<th>Password</th>
+					<th>Email</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody id="tableContent" *ngIf="showTableContent">
+				<tr class="table-tbody-tr" *ngFor="let elem of userArr; index as i">
+					<td>{{i+1}}.</td>
+					<td>{{ elem.login}}</td>
+					<td>{{elem.password}}</td>
+					<td>{{elem.email}}</td>
+					<td><button type="button" class="btn-edit" (click)="editUser(i)">Edit</button></td>
+					<td><button type="button" class="btn-delete" (click)="deleteUser(i)">Delete</button> </td>
+			</tr>
+			</tbody>
+		</table>
+
+
+
+		<!-- <table class="table">
+			<thead>
+				<tr class="table-tr">
+					<th>#</th>
+					<th>Login</th>
+					<th>Password</th>
+					<th>Email</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead> -->
+			<!-- <thead>
+				<tr class="table-tr">
+					<td>#</td>
+					<td>Login</td>
+					<td>Password</td>
+					<td>Email</td>
+					<td>Edit</td>
+					<td>Delete</td>
+				</tr>
+			</thead> -->
+<!-- 
+			<tbody class="table-tr">
+				<tr>
+					<th>sdvsdv</th>
+					<th>sdvcascascccccccccascascsdv</th>
+					<th>sdvsdvsdv</th>
+					<th>vsdvsdvsdv</th>
+					<th><button type="button" class="btn-edit">Edit</button></th>
+					<th><button type="button" class="btn-delete">Delete</button> </th>
+				</tr> -->
+				<!-- <tr>
+					<td>sdvsdv</td>
+					<td>sdcascascsdv</td>
+					<td>sdvsdvsdv</td>
+					<td>vsdvsdvsdv</td>
+					<td><button type="button" class="btn-edit">Edit</button></td>
+					<td><button type="button" class="btn-delete">Delete</button> </td>
+				</tr> -->
+				<!-- <tr>
+					<td>sdvsdv</td>
+					<td>dv</td>
+					<td>sdvsdvsdv</td>
+					<td>vsdvsdvsdv</td>
+					<td><button type="button" class="btn-edit">Edit</button></td>
+					<td><button type="button" class="btn-delete">Delete</button> </td>
+				</tr> -->
+			<!-- </tbody> -->
+			<!-- <tbody>
+				<tr class="table-tbody-tr" *ngFor="let elem of userArr; index as i">
+					<td>{{i+1}}.</td>
+					<td>{{ elem.login}}</td>
+					<td>{{elem.password}}</td>
+					<td>{{elem.email}}</td>
+					<td><button type="button" class="btn-edit">Edit</button></td>
+					<td><button type="button" class="btn-delete">Delete</button> </td>
+				</tr>
+			</tbody> -->
+		<!-- </table> -->
+	</div>
+</main>
