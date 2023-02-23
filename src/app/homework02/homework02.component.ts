@@ -15,18 +15,13 @@ export class Homework02Component {
   formLog: string = '';
   formPass: string = '';
   formEmail: string = '';
-  userArr: User[] = [{ login: '', password: '', email: '' }];
-  showTableContent: boolean = false;
+  userArr: User[] = [];
   editIndex!: number;
   editStatus = false;
 
   isRegLogin = true;
   isRegPass = true;
   isRegEmail = true;
-
-  regLog = new RegExp('\\w+');
-  regPass = new RegExp('\\S{6,}');
-  regEmail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
   validateLogin(login: string): boolean {
     const regLog = new RegExp('\\w+');
@@ -55,6 +50,7 @@ export class Homework02Component {
   }
 
   takingDataForm(): void {
+    this.changeVariable();
     if (
       this.validateLogin(this.formLog) &&
       this.validatePassword(this.formPass) &&
@@ -65,23 +61,12 @@ export class Homework02Component {
         password: this.formPass,
         email: this.formEmail,
       };
-      if (this.userArr[0].login === '') {
-        this.userArr = [];
-      }
       this.userArr.push(userObj);
-      this.changeVariable();
       this.resetForm();
-      this.showTableContent = true;
-    } else {
-      this.changeVariable();
-    }
+    } 
   }
   deleteUser(index: number): void {
     this.userArr.splice(index, 1);
-    if (this.userArr.length === 0) {
-      this.userArr.push({ login: '', password: '', email: '' });
-      this.showTableContent = false;
-    }
   }
 
   editUser(index: number): void {
@@ -93,6 +78,7 @@ export class Homework02Component {
   }
 
   updateName(): void {
+    this.changeVariable();
     if (
       this.validateLogin(this.formLog) &&
       this.validatePassword(this.formPass) &&
@@ -102,11 +88,8 @@ export class Homework02Component {
       this.userArr[this.editIndex].password = this.formPass;
       this.userArr[this.editIndex].email = this.formEmail;
       this.editStatus = false;
-      this.changeVariable();
       this.resetForm();
-    } else {
-      this.changeVariable();
-    }
+    } 
   }
 }
 
