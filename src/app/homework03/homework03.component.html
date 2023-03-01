@@ -1,0 +1,25 @@
+<div class="container">
+	<header class="content">
+		<h1 class="title">Plan your day!</h1>
+		<p class="usersCountTask">User: <span style="text-decoration: underline; cursor: pointer;"
+				(click)="changingName = !changingName"> {{ newUserName }}</span>. Count of Task
+			<span>{{countTasks}}</span>
+		</p>
+		<div class="changingUsername" *ngIf="changingName" (click)="changingUserName()">
+			<label for="changingUsername" class="changingUsername-input-label" (click)="stopPropagation($event)">Введіть своє і’мя:</label>
+			<input type="text" id="changingUsername" class="changingUsername-input" placeholder="write here..."
+				(click)="stopPropagation($event)" [(ngModel)]="newName">
+		</div>
+		<hr>
+	</header>
+
+	<section class="content">
+		<div class="addTask">
+			<input type="text" class="addTask-input" [(ngModel)]="task" placeholder="Введіть завдання">
+			<button type="submit" class="addTask-btn" (click)="addTask()">Add</button>
+		</div>
+		<hr>
+		<app-table [tasksArr]='tasksArr' (newCountTasks)='newCountTasks($event)' (indexChange)="indexChange($event)"
+			(taskChange)='taskChange($event)'></app-table>
+	</section>
+</div>

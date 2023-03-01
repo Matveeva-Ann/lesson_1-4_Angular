@@ -1,0 +1,32 @@
+<table class="table">
+	<thead class="table-head">
+		<tr class="table-head-tr">
+			<th>#</th>
+			<th>Task</th>
+			<th>Check</th>
+			<th>Done/in Progress</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody class="table-tbody">
+		<tr class="table-tbody-tr" *ngFor="let userTask of tasksArr; index as i; even as even"
+			[style.backgroundColor]="even ? 'transparent' : '#dcdcdca6'">
+			<td style="font-weight: 600;">{{i+1}}.</td>
+			<td>{{userTask.task}}</td>
+			<td>
+				<div class="checkboxWrapper">
+					<input type="checkbox" class="checkbox" (click)="addCheck(i)">
+					<span class="newCheckbox"></span>
+				</div>
+			</td>
+			<td>
+				<p *ngIf="!userTask.status" class="table-tbody-tr-Done">Done</p>
+				<p *ngIf="userTask.status" class="table-tbody-tr-PROGRESS">In PROGRESS</p>
+			</td>
+			<td><button type="button" class="table-tbody-tr-Edit" (click)="editTask(i)">Edit</button></td>
+			<td><button type="button" class="table-tbody-tr-Delete" [disabled]="userTask.status"
+					(click)="deleteTask(i)">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
