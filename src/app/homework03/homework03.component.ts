@@ -29,7 +29,7 @@ export class Homework03Component {
     this.changingName = false;
   }
   addTask(): void {
-    if (this.task === ''){
+    if (this.task.trim() === ''){
       return;
     }else{
       if (this.editStatus) {
@@ -37,7 +37,7 @@ export class Homework03Component {
           task: this.task,
           status: true,
         };
-        this.tasksArr.push(taskObj);
+        this.tasksArr.unshift(taskObj);
         this.task = '';
         this.countTasks = this.tasksArr.length;
       } 
@@ -46,8 +46,7 @@ export class Homework03Component {
         this.task = '';
         this.editStatus = true;
       }
-    }
-    
+    } 
   }
   newCountTasks(newCountTasks: number): void {
     this.countTasks = newCountTasks;

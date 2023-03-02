@@ -16,15 +16,14 @@
 			<td>{{userTask.task}}</td>
 			<td>
 				<div class="checkboxWrapper">
-					<input type="checkbox" class="checkbox" (click)="addCheck(i)">
-					<span class="newCheckbox"></span>
+					<input type="checkbox" id="checkboxBtn" class="checkbox" [checked]="!userTask.status" (click)="addCheck(i)">
+					<label for="checkboxBtn"><span class="newCheckbox"></span></label>
 				</div>
 			</td>
 			<td>
-				<p *ngIf="!userTask.status" class="table-tbody-tr-Done">Done</p>
-				<p *ngIf="userTask.status" class="table-tbody-tr-PROGRESS">In PROGRESS</p>
+				<p [ngClass]="{'table-tbody-tr-Done': !userTask.status, 'table-tbody-tr-PROGRESS': userTask.status}">{{userTask.status ? "In PROGRESS" : "Done"}}</p>
 			</td>
-			<td><button type="button" class="table-tbody-tr-Edit" (click)="editTask(i)">Edit</button></td>
+			<td><button type="button" class="table-tbody-tr-Edit" (click)="editTask(i)" [disabled]="!userTask.status">Edit</button></td>
 			<td><button type="button" class="table-tbody-tr-Delete" [disabled]="userTask.status"
 					(click)="deleteTask(i)">Delete</button></td>
 		</tr>
