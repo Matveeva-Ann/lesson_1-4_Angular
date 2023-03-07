@@ -8,7 +8,6 @@ import { Task } from '../homework03.component';
 })
 export class TableComponent {
   @Input()  tasksArr!: Task[];
-  @Output() newCountTasks = new EventEmitter<number>();
   @Output() taskChange = new EventEmitter<string>();
   @Output() indexChange = new EventEmitter<number>();
 
@@ -17,7 +16,6 @@ export class TableComponent {
   }
   deleteTask(index: number): void {
     this.tasksArr.splice(index, 1);
-    this.newCountTasks.emit(this.tasksArr.length);
   }
   editTask(index: number): void {
     const task = this.tasksArr[index].task;

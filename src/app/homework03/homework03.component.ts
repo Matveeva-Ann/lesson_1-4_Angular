@@ -39,7 +39,6 @@ export class Homework03Component {
         };
         this.tasksArr.unshift(taskObj);
         this.task = '';
-        this.countTasks = this.tasksArr.length;
       } 
       else {
         this.tasksArr[this.index].task = this.task;
@@ -48,8 +47,8 @@ export class Homework03Component {
       }
     } 
   }
-  newCountTasks(newCountTasks: number): void {
-    this.countTasks = newCountTasks;
+  ngDoCheck(): void {
+    this.countTasks = this.tasksArr.length;    
   }
   taskChange(task: string): void {
     this.task = task;

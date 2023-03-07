@@ -19,7 +19,7 @@
 			<button type="submit" class="addTask-btn" (click)="addTask()">Add</button>
 		</div>
 		<hr>
-		<app-table [tasksArr]='tasksArr' (newCountTasks)='newCountTasks($event)' (indexChange)="indexChange($event)"
+		<app-table [tasksArr]='tasksArr' (indexChange)="indexChange($event)"
 			(taskChange)='taskChange($event)'></app-table>
 	</section>
 </div>
