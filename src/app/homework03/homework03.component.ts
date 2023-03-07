@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 export interface Task {
   task: string;
@@ -9,6 +9,7 @@ export interface Task {
   selector: 'app-homework03',
   templateUrl: './homework03.component.html',
   styleUrls: ['./homework03.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Homework03Component {
   changingName = false;
