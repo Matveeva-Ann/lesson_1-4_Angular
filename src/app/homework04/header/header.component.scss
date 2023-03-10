@@ -1,0 +1,66 @@
+$darkgray: #555555;
+$red: #FF4500;
+$darkgrayOpacity: #a9a9a9cb;
+
+.title{
+  color: $red;
+  font-size: 35px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 20px 0 0;
+}
+.userData{
+  font-size: 20px;
+}
+.userName{
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-block;
+  user-select: none;
+  color: $darkgray;
+  &:active{
+    transform: translate3d(0, 0.05em, 0em);
+  }
+}
+.headerWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.wrapperNameRecord{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $darkgrayOpacity;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapperForStopPropagation{
+  width: 450px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.NameRecordTitle{
+  font-size: 20px;
+  text-align: left;
+  width: 300px;
+  margin: 10px 0;
+}
+.fildToWriteName{
+  width: 300px;
+  height: 30px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 0 2px $darkgray;
+  padding: 4px 10px;
+  font-size: 18px;
+  &:focus{
+    outline: none;
+  }
+}

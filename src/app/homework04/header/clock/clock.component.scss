@@ -1,0 +1,18 @@
+$darkgray: #555555;
+
+.dataWrapper{
+  width: 100px;
+  height: auto;
+}
+.day, .time{
+  font-size: 16px;
+  margin: 20px 0 0;
+  font-family: 'DIGIB';
+  color: $darkgray;
+  letter-spacing: 2px;
+  text-align: left;
+}
+.time{
+  margin: 0;
+  font-size: 25px;
+}

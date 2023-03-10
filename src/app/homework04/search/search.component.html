@@ -1,0 +1,4 @@
+<div class="wrapper">
+  <input type="text" placeholder="search text goes here" class="searchPlace" [(ngModel)]="searchValue" (input)="search()">
+  <span class="cross" *ngIf="addCross" (click)="resetSesrchPlace()">&times;</span>
+</div>

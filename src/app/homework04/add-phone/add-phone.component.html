@@ -1,0 +1,18 @@
+<button type="button" class="btn-add" (click)="showForm = !showForm">Add phone</button>
+<div class="wrapperAddNumb" *ngIf="showForm">
+  <div class="formContent">
+    <div class="formContent-heder">
+      <h2>Add phone</h2>
+      <span class="formContent-cross" (click)="showForm = !showForm">&times;</span>
+    </div>
+    <hr>
+    <form class="formAddNumb" name="formAddNumb">
+      <input type="text" class="formAddNumb-input" name="firstName" placeholder="first name gose here" [(ngModel)]="firstName">
+      <input type="text" class="formAddNumb-input" name="lastName" placeholder="second name gose here" [(ngModel)]="lastName">
+      <input type="number" class="formAddNumb-input" name="phoneNumber" placeholder="number phone gose here" [(ngModel)]="phoneNumber">
+      <p class="message" *ngIf="showMessage">* Необхідно заповнити всі поля</p>
+      <hr class="formAddNumb-hr"> 
+      <button type="button" class="formAddNumb-btn" (click)="addPerson()">Save</button>
+    </form>
+  </div>
+</div>

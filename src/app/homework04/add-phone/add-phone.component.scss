@@ -1,0 +1,114 @@
+$green:	#008000;	
+$white: #fff;
+$darkgrayOpacity: #686868a9;
+$darkgray: #686868;
+$blue: #4169E1;
+$red: #FF4500;
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+.btn-add{
+  min-width: 130px;
+  height: 100%;
+  padding: 5px;
+  background-color: $green;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  &:hover{
+    opacity: 0.8;
+  }
+  &:active{
+    transform: translate3d(0, 0.15em, 0em);
+  }
+}
+.wrapperAddNumb{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $darkgrayOpacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.formContent{
+  min-width: 400px;
+  min-height: 300px;
+  background-color: $white;
+  border-radius: 4px;
+  position: relative;
+  &-heder{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 60px;
+    line-height: 44px;
+    font-size: 18px;
+  }
+  &-cross{
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 30px;
+    padding: 5px;
+    user-select: none;
+    line-height: 30px;
+    &:active{
+      transform: translate3d(0, 0.05em, 0em);
+    }
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+.formAddNumb{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  &-input{
+    padding: 5px;
+    min-height: 32px;
+    border: 1px solid $darkgray;
+    box-shadow: 0 0 2px $darkgrayOpacity;
+    font-size: 15px;
+    &:focus{
+      outline: none;
+    }
+    &::placeholder{
+      color: $darkgray;
+    }
+  }
+  &-hr{
+    margin: 20px -20px 0;
+  }
+  &-btn{
+    padding: 4px;
+    background-color: $blue;
+    min-width: 100px;
+    min-height: 30px;
+    border: none;
+    color: $white;
+    border-radius: 4px;
+    align-self: flex-end;
+    &:hover{
+      opacity: 0.8;
+    }
+    &:active{
+      transform: translate3d(0, 0.05em, 0em);
+    }
+  }
+}
+.message{
+  position: absolute;
+  color: $red;
+  font-size: 16px;
+  bottom: 75px;
+  left: 20px;
+}

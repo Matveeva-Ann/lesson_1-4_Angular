@@ -1,0 +1,62 @@
+<div class="container" [attr.style]="color">
+  <div class="content">
+    <app-header [amountNumbers]='amountNumbers'></app-header>
+    <hr>
+    <div class="locationСomponents">
+      <app-search (searchTaxt)="searchTaxt($event)"></app-search>
+      <app-add-phone (addPersonNumb)="addPerson($event)" [dataEdit]='dataEdit'></app-add-phone>
+    </div>
+    <hr>
+    <table class="phoneTable">
+      <thead class="phoneTable-head">
+        <tr class="phoneTable-row">
+          <th class="phoneTable-th" (click)="showArrow = !showArrow">First name
+            <span class="arrows" *ngIf="showArrow" (click)="stopPropagation($event)">
+              <ng-container *ngIf="changeArrow; else elseShowBtnUp">
+                <button class="sortBtn sortBtn-down" (click)="arrowBtn('down')">&darr;</button>
+              </ng-container>
+              <ng-template #elseShowBtnUp>
+                <button class="sortBtn sortBtn-up" (click)="arrowBtn('up')">&#x2191;</button>
+              </ng-template>
+            </span>
+          </th>
+          <th class="phoneTable-th" (click)="showArrowLn = !showArrowLn">Last name
+            <span class="arrows" *ngIf="showArrowLn" (click)="stopPropagation($event)">
+              <ng-container *ngIf="changeArrowLn; else elseShowBtnUpLn">
+                <button class="sortBtn sortBtn-down" (click)="arrowBtnLn('downLn')">&darr;</button>
+              </ng-container>
+              <ng-template #elseShowBtnUpLn>
+                <button class="sortBtn sortBtn-up" (click)="arrowBtnLn('upLn')">&#x2191;</button>
+              </ng-template>
+            </span>
+          </th>
+          <th class="phoneTable-th" (click)="showArrowNumb = !showArrowNumb">Number
+            <span class="arrows" *ngIf="showArrowNumb" (click)="stopPropagation($event)">
+              <ng-container *ngIf="changeArrowNumb; else elseShowBtnUpNumb">
+                <button class="sortBtn sortBtn-down" (click)="arrowBtnNumb('downNumb')">&darr;</button>
+              </ng-container>
+              <ng-template #elseShowBtnUpNumb>
+                <button class="sortBtn sortBtn-up" (click)="arrowBtnNumb('upNumb')">&#x2191;</button>
+              </ng-template>
+            </span>
+          </th>
+          <th class="phoneTable-th">Edit</th>
+          <th class="phoneTable-th">Delete</th>
+        </tr>
+      </thead>
+      <tbody class="phoneTable-body" *ngFor="let person of phonebook | searchData:searchData |sortNames:type | sortLn:typeLn | sortPhoneNumb:typeNumb">
+        <tr class="phoneTable-row phoneTable-body-row">
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+          <td>{{person.phoneNumber}}</td>
+          <td>
+            <button class="phoneTable-btn phoneTable-btn-edit" (click)="editPersonNumb(person.id)">Edit</button>
+          </td>
+          <td>
+            <button class="phoneTable-btn phoneTable-btn-delete" (click)="deletePersonNumb(person.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'DIGIB';
+    src: url(./assets/7fonts.ru_ds_digital/7fonts.ru_DS-DIGIB.TTF);
+}
+
 body{
     margin: 0;
+    box-sizing: border-box;
 }

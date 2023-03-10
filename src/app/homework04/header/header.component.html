@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="headerWrapper">
+    <h1 class="title">My phone book!</h1>
+    <app-clock></app-clock>
+  </div>
+  <div>
+    <p class="userData">User name: <span class="userName" (click)="showFieldNameRecord = !showFieldNameRecord">
+        {{userName}}</span></p>
+    <div *ngIf="showFieldNameRecord" class="wrapperNameRecord" (click)="hideFieldNameRecord()">
+      <div (click)="stopPropagation($event)" class="wrapperForStopPropagation">
+        <label for="fildToWriteName" class="NameRecordTitle">User name:</label>
+        <input type="text" class="fildToWriteName" id="fildToWriteName" placeholder="write your name here..."
+          [(ngModel)]="writtenName">
+      </div>
+    </div>
+    <span class="userData">Number of phone numbers: {{amountNumbers}}</span>
+  </div>
+</div>

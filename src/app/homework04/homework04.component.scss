@@ -1,0 +1,91 @@
+$white: #fff;
+$darkgrayOpacity: #a9a9a9a9;
+$darkgray: #a9a9a9;
+$yellow: #ffd700;
+$red: #ff4500;
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  transition: background-color 8s ease;
+}
+.content{
+  width: 80%;
+  height: auto;
+}
+.locationСomponents{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 35px;
+  justify-content: space-between;
+}
+app-search{
+  flex-grow: 1;
+}
+hr{
+  margin: 16px 0;
+}
+.phoneTable {
+  width: 100%;
+  border-collapse: collapse;
+  &-row {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid $darkgray;
+    border-top: 1px solid $darkgray;
+    font-size: 20px;
+  }
+  &-th {
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    user-select: none;
+  }
+  &-body {
+    width: 100%;
+    text-align: center;
+    &-row {
+      font-size: 17px;
+      padding: 10px;
+      height: 45px;
+    }
+  }
+  &-btn {
+    cursor: pointer;
+    min-width: 70px;
+    padding: 2px 5px;
+    min-height: 25px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 3px $darkgrayOpacity;
+    &:hover {
+      opacity: 0.9;
+    }
+    &:active {
+      transform: translate3d(0, 0.15em, 0em);
+    }
+    &-edit {
+      background-color: $yellow;
+    }
+    &-delete {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
+.sortBtn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  position: absolute;
+  z-index: 10;
+  &:active{
+    transform: translate3d(0, 0.1em, 0em);
+  }
+  
+}
